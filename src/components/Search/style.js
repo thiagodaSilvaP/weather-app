@@ -1,17 +1,32 @@
 import styled from "styled-components";
 
+export const InputContainer = styled.div`
+  width: 100%;
+  padding: 10px 20px;
+  color: ${(props) => props.theme.colors.bg_light};
+  background-color: ${(props) => props.theme.colors.bg_dark_light};
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+
+  .icon-search {
+    font-size: ${props => props.theme.sizes.small};
+    margin-right: 10px;
+  }
+`;
+
 export const Container = styled.div`
   width: 100%;
   padding: 10px;
 
   input {
-    width: 100%;
-    padding: 20px;
+    flex: 1;
     height: ${(props) => props.theme.sizes.medium};
     color: ${(props) => props.theme.colors.bg_light};
     background-color: ${(props) => props.theme.colors.bg_dark_light};
     border-radius: 10px;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
 
     &::placeholder {
       color: ${(props) => props.theme.colors.bg_grey};

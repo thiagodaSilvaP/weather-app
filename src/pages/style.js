@@ -8,6 +8,7 @@ export const Container = styled.div`
     justify-content: center;
     align-items: center;
     background-color: ${props => props.theme.colors.bg_default};
+    color: ${props => props.theme.colors.bg_light};
 `
 
 export const Center = styled.div`
