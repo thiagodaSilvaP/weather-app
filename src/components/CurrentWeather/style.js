@@ -22,5 +22,5 @@ export const WeatherTitle = styled.h3`
 `;
 
 export const Temperature = styled.h1`
-  font-size: ${(props) => props.theme.sizes.large};
+  font-size: 8rem;
 `;
