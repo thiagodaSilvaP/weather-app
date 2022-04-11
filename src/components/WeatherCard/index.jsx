@@ -1,6 +1,6 @@
 import {Container, WeatherTitle, Temperature} from './style';
 
-import cloud from '../../assets/cloud/cloud.png';
+import cloud from '../../assets/cloud/5.png';
 
 export const WeatherCard = () => {
     return (
