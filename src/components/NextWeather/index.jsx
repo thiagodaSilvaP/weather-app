@@ -6,7 +6,7 @@ export const NextWeather = () => {
     const array = [3, 4, 4]
     return (
         <Container>
-            {array.map(item => <WeatherCard/>)}
+            {array.map((item, index) => <WeatherCard key={index}/>)}
         </Container>
     )
 };
