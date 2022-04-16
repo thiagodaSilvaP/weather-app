@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import { Search } from "../components/Search";
 import { CurrentWeather } from "../components/CurrentWeather";
 import { NextWeather } from "../components/NextWeather";
 
-import { WeatherProvider } from "../contexts/weatherContexts";
+import {CityProvider} from '../contexts/cityContext';
 
 import { Container, Center } from "./style";
 import { Theme } from "../styles/Theme";
 
 function App() {
   return (
-    <WeatherProvider>
+    <CityProvider>
       <Theme>
         <Container>
           <Center>
@@ -21,7 +21,7 @@ function App() {
           </Center>
         </Container>
       </Theme>
-    </WeatherProvider>
+    </CityProvider>
   );
 }
 

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.form`
   width: 100%;
   padding: 10px 20px;
   color: ${(props) => props.theme.colors.bg_light};
