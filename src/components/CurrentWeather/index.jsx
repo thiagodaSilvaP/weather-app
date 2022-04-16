@@ -29,12 +29,12 @@ export const CurrentWeather = () => {
         fetch()
     }, [currentCity]);
 
-    console.log(currentWeatherData)
+    console.log(currentWeatherData?.weather[0].main)
     return (
         <Container>
             <img src={cloud} alt="" className='current-weather-image'/>
             <Temperature>{currentWeatherData?.main?.temp}ºC</Temperature>
-            <WeatherTitle>Thunder</WeatherTitle>
+            <WeatherTitle>{currentWeatherData?.weather[0].main}</WeatherTitle>
         </Container>
     )
 };
