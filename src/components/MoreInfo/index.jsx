@@ -11,14 +11,14 @@ export const MoreInfo = () => {
     <Container>
         <MoreInfoCard
           title="Feels Like"
-          data={currentWeatherData?.main?.feels_like}
+          data={Math.ceil(currentWeatherData?.main?.feels_like)}
           info='C'
         />
       <MoreInfoCard
         title="Max. / Min."
         data={{
-          temp_max: currentWeatherData?.main?.temp_max,
-          temp_min: currentWeatherData?.main?.temp_min,
+          temp_max: Math.ceil(currentWeatherData?.main?.temp_max),
+          temp_min: Math.ceil(currentWeatherData?.main?.temp_min),
         }}
       />
       <MoreInfoCard
