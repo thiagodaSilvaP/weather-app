@@ -5,25 +5,28 @@ import { CurrentWeather } from "../components/CurrentWeather";
 import { NextWeather } from "../components/NextWeather";
 import { MoreInfo } from "../components/MoreInfo";
 
-import {CityProvider} from '../contexts/cityContext';
+import { CityProvider } from "../contexts/cityContext";
+import { WeatherProvider } from "../contexts/weatherContext";
 
 import { Container, Center } from "./style";
 import { Theme } from "../styles/Theme";
 
 function App() {
   return (
-    <CityProvider>
-      <Theme>
-        <Container>
-          <Center>
-            <Search />
-            <CurrentWeather />
-            <NextWeather />
-            <MoreInfo/>
-          </Center>
-        </Container>
-      </Theme>
-    </CityProvider>
+    <WeatherProvider>
+      <CityProvider>
+        <Theme>
+          <Container>
+            <Center>
+              <Search />
+              <CurrentWeather />
+              <NextWeather />
+              <MoreInfo />
+            </Center>
+          </Container>
+        </Theme>
+      </CityProvider>
+    </WeatherProvider>
   );
 }
 

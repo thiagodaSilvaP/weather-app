@@ -1,23 +1,26 @@
 import {useState, useEffect, useContext} from 'react';
 
 import {CityContext} from '../../contexts/cityContext';
-import {getWeatherIcon} from '../../utils/getWeatherIcon';
+import {WeatherContext} from '../../contexts/weatherContext';
+
 import {currentWeather} from '../../services/weather';
 import {timeDataCities} from '../../services/timeCities';
+
+import {getWeatherIcon} from '../../utils/getWeatherIcon';
 
 import {Container, WeatherTitle, Temperature} from './style';
 
 export const CurrentWeather = () => {
-    const [currentWeatherData, setcurrentWeatherData] = useState({});
-    const [currentTimeCityData, setCurrentTimeCityData] = useState('');
     const {currentCity} = useContext(CityContext)
+    const {currentWeatherData, setCurrentWeatherData} = useContext(WeatherContext)
+    const [currentTimeCityData, setCurrentTimeCityData] = useState('');
     const [weatherIconData, setWeatherIconData] = useState('');
 
     useEffect(() => {
         const fetch = async () => {
             const {data} = await currentWeather.get(`weather?q=${currentCity}&appid=0913c01f689e2d2731583b5982255c69&units=metric`)
             console.log('Data of first fetch', data);
-            setcurrentWeatherData(data)
+            setCurrentWeatherData(data)
         }
         fetch()
     }, []);
@@ -28,7 +31,7 @@ export const CurrentWeather = () => {
             const time = await timeDataCities.get(`&location=${currentCity}`)
             const weatherIcon = getWeatherIcon(data.weather[0].icon)
 
-            setcurrentWeatherData(data)
+            setCurrentWeatherData(data)
             setCurrentTimeCityData(time.data)
             setWeatherIconData(weatherIcon)
         }
