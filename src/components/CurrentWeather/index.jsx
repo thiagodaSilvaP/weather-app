@@ -16,7 +16,7 @@ export const CurrentWeather = () => {
     useEffect(() => {
         const fetch = async () => {
             const {data} = await currentWeather.get(`weather?q=${currentCity}&appid=0913c01f689e2d2731583b5982255c69&units=metric`)
-
+            console.log('Data of first fetch', data);
             setcurrentWeatherData(data)
         }
         fetch()
@@ -35,15 +35,12 @@ export const CurrentWeather = () => {
         fetch()
     }, [currentCity]);
 
-    console.log(currentWeatherData)
-    console.log('aaaaaaaaaaaaaaaaa', currentTimeCityData);
-
     return (
         <Container>
             <h3>{currentWeatherData?.name}, {currentWeatherData?.sys?.country}, <br/>{currentTimeCityData.date_time_txt}</h3>
             <img src={weatherIconData} alt="" className='current-weather-image'/>
-            <Temperature>{Math.ceil(currentWeatherData?.main?.temp)}ºC</Temperature>
-            <WeatherTitle>{}</WeatherTitle>
+            <Temperature>{Math.ceil(currentWeatherData?.main?.temp)}ºC</Temperature> 
+            <WeatherTitle>{currentWeatherData?.weather?.[0].main}</WeatherTitle>
         </Container>
     )
 };

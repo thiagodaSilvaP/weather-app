@@ -1,4 +1,4 @@
-import {WeatherCard} from '../WeatherCard';
+import {WeatherCard} from '../NextWeatherCard';
 
 import {Container} from './style';
 
