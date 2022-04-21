@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Search } from "../components/Search";
-import { CurrentWeather } from "../components/CurrentWeather";
+import {Weather} from '../components/Weather';
 import { NextWeather } from "../components/NextWeather";
 import { MoreInfo } from "../components/MoreInfo";
 
@@ -19,9 +19,7 @@ function App() {
           <Container>
             <Center>
               <Search />
-              <CurrentWeather />
-              <NextWeather />
-              <MoreInfo />
+              <Weather/>
             </Center>
           </Container>
         </Theme>

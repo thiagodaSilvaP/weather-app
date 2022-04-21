@@ -1,12 +1,16 @@
+import React, {useState, useEffect, useContext} from 'react';
+
 import {WeatherCard} from '../NextWeatherCard';
+import {CityContext} from '../../contexts/cityContext';
+import {WeatherContext} from '../../contexts/weatherContext';
+import {dailyWeather} from '../../services/weather';
 
 import {Container} from './style';
 
-export const NextWeather = () => {
-    const array = [3, 4, 4]
+export const NextWeather = ({daily}) => {
     return (
         <Container>
-            {array.map((item, index) => <WeatherCard key={index}/>)}
+            {daily.map((day, index) => <WeatherCard key={index} day={day}/>)}
         </Container>
     )
 };

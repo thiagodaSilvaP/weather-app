@@ -11,13 +11,15 @@ export const Container = styled.div`
     flex-direction: column;
     background-color: ${props => props.theme.colors.bg_dark_light};
     cursor: pointer;
+    
 
     &:hover {
         transform: scale(1.05);
     }
 
     .current-weather-image {
-        width: 50px;
+        max-width: 50px;
+        min-width: 50px;
     }
 `
 
